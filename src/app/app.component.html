@@ -1,0 +1,19 @@
+<div class = "main"> 
+  <h1> Dilly Dally </h1>
+  <label for="addItemInput"> Current Tasks </label>
+
+    <input
+    #newItem
+    placeholder = "New Task"
+    (keyup.enter) = "addItem(newItem.value); newItem.value = ''"
+    class = "lg-text-input"
+    id = "addItemInput"
+    />
+
+    <button class = "btn-primary" (click) = "addItem(newItem.value)">Add</button>
+    <ul>
+      <li *ngFor="let item of items">{{item.description}}</li>
+    </ul>
+  </div>
+
+ 
